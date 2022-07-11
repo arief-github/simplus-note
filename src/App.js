@@ -1,19 +1,8 @@
-import Header from './components/Header';
-import NoteLists from './components/NoteLists';
-import NoteInput from './components/NoteInput';
-import { Provider } from './hooks/useGlobalState';
-import './App.css';
+import Home from './pages/Home';
 
 function App() {
   return (
-    <Provider>
-      <Header/>>
-        <main className="note-app__body">
-          <NoteInput/>
-          <NoteLists title="Catatan Aktif"></NoteLists>
-          <NoteLists title="Arsip"></NoteLists>
-        </main>
-    </Provider>
+    <Home/>
   );
 }
 
