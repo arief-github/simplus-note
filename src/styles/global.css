@@ -29,3 +29,24 @@
 	--fw-semibold:600;
 	--fw-bold: 700;
 }
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-size: 14px;
+	min-width: var(--minWidth);
+	background-color: var(--background-color);
+	color: var(--text-primary-color);
+	font-family: Poppins, sans-serif;
+}
+
+/* Desktop Version */
+@media only screen and (min-width: 768px) {
+	body {
+		font-size: 16px;
+	}
+}
