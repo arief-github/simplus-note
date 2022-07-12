@@ -1,0 +1,10 @@
+.masonryGrid {
+	display: flex;
+	margin-left: calc(var(--gutter) * -1);
+	width: auto;
+}
+
+.masonryColumn {
+	padding-left: var(--gutter);
+	background-clip: padding-box;
+}
