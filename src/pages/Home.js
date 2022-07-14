@@ -10,7 +10,7 @@ import TabList from '../containers/TabList';
 import styles from '../styles/home.module.css';
 
 function Home() {
-	const { activeNotes } = useContext(NotesContext);
+	const { activeNotes, archiveNotes } = useContext(NotesContext);
 
 	useEffect(() => {
 		document.title = 'Halaman Utama';
@@ -30,7 +30,7 @@ function Home() {
 				<section className={styles.main__notelist} id="daftar-catatan" aria-label="Daftar Catatan">
 					<div className={styles.main__notelistWrapper}>
 						<TabPanel panelId={`panel-aktif`} panelName={`active`} panelLabel={`tab-catatan-aktif`} notes={activeNotes} />
-						
+						<TabPanel panelId={`panel-arsip`} panelName={`archive`} panelLabel={`tab-catatan-arsip`} notes={archiveNotes}/>
 					</div>
 				</section>
 			</main>

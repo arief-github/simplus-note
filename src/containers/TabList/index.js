@@ -7,7 +7,7 @@ import { PanelContext } from '../../context/PanelContext';
 import styles from './index.module.css';
 
 function TabList() {
-	const  { activeNotes }  = useContext(NotesContext);
+	const  { activeNotes, archiveNotes }  = useContext(NotesContext);
 	const { panel, setPanel } = useContext(PanelContext);
 
 	const [tabFocus, setTabFocus] = useState(0);
@@ -19,6 +19,7 @@ function TabList() {
 
 	const amountOfNotesData = {
 		active: activeNotes.length,
+		archive: archiveNotes.length,
 	}
 
 	// Tablist
@@ -78,7 +79,7 @@ function TabList() {
 				onClick={() => setPanel('archive')}
 				className={styles.buttonTab}
 			>
-				<ArchiveIcon className={styles.iconBtn}/> Arsip
+				<ArchiveIcon className={styles.iconBtn}/> Arsip ({ amountOfNotesData.archive })
 			</button>
 		</div>
 	)

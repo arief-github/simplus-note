@@ -13,6 +13,7 @@ const NotesContextProvider = ( props ) => {
 	const [notes, setNotes] = useState(initialState());
 
 	const activeNotes = notes.filter((note) => note.archived === false);
+	const archiveNotes = notes.filter((note) => note.archived === true);
 
 	const deleteNote = ( id ) => {
 		if (window.confirm('Delete Note ? ')) {
@@ -21,9 +22,22 @@ const NotesContextProvider = ( props ) => {
 		}
 	}
 
+	const moveNote = ( id ) => {
+		const filteredNotes = notes.map((note) => {
+				if(note.id === id) {
+					return {
+						...note,
+						archived: !note.archived,
+					}
+				}
+
+				return note;
+			});
+			setNotes(filteredNotes);
+	}
 
 	return (
-		<NotesContext.Provider value={{ activeNotes, deleteNote }}> {props.children} </NotesContext.Provider>
+		<NotesContext.Provider value={{ activeNotes, archiveNotes, deleteNote, moveNote }}> {props.children} </NotesContext.Provider>
 	)
 };
 
