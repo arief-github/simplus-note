@@ -12,6 +12,10 @@ import styles from '../styles/home.module.css';
 function Home() {
 	const { activeNotes } = useContext(NotesContext);
 
+	useEffect(() => {
+		document.title = 'Halaman Utama';
+	})
+
 	return (
 		<>
 			<Header/>
