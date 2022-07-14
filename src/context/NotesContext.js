@@ -14,8 +14,16 @@ const NotesContextProvider = ( props ) => {
 
 	const activeNotes = notes.filter((note) => note.archived === false);
 
+	const deleteNote = ( id ) => {
+		if (window.confirm('Delete Note ? ')) {
+			const deleteNotes = notes.filter((note) => note.id !== id);
+			setNotes(deleteNotes)
+		}
+	}
+
+
 	return (
-		<NotesContext.Provider value={{ activeNotes }}> {props.children} </NotesContext.Provider>
+		<NotesContext.Provider value={{ activeNotes, deleteNote }}> {props.children} </NotesContext.Provider>
 	)
 };
 
