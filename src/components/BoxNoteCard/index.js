@@ -11,14 +11,16 @@ const breakpointColumnsObj = {
 	640: 1,
 } 
 
-function BoxNoteCard() {
+function BoxNoteCard( { notes } ) {
 	return (
 		<Masonry
 		  breakpointCols={ breakpointColumnsObj }
 		  className={ styles.masonryGrid }
 		  columnClassName={ styles.masonryGridColumn }
 		>
-			
+			{ notes.map((note) => {
+				return <NoteCard key={note.id} note={note} />
+			}) }
 		</Masonry>
 	)
 }
