@@ -4,7 +4,7 @@ import NotesContextProvider from './context/NotesContext';
 import PanelContextProvider from './context/PanelContext';
 
 import Home from './pages/Home';
-import Empty from './pages/NotFound';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <PanelContextProvider>
         <Routes>
           <Route path="/" element={ <Home/> } />
-          <Route path="*" element={ <Empty/> }/>
+          <Route path="*" element={ <NotFound/> }/>
         </Routes>
       </PanelContextProvider>
     </NotesContextProvider>

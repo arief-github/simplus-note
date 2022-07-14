@@ -9,9 +9,8 @@ function Empty() {
 	return (
 		<div className={styles.boxEmpty}>
 			<picture>
-				<source media="(min-width: 768px)" srcSet={EmptyInboxDesktop}>
-					<img src={EmptyInboxMobile} alt=""/>
-				</source>
+				<source media="(min-width: 768px)" srcSet={EmptyInboxDesktop}/>
+				<img src={EmptyInboxMobile} alt=""/>
 			</picture>
 			<p className={styles.text}>
 				Catatan singkat tidak ditemukan
