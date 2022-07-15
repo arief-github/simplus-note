@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import TabPanel from '../components/TabPanel';
 
 import TabList from '../containers/TabList';
+import ModalForm from '../containers/ModalForm';
 
 import styles from '../styles/home.module.css';
 
@@ -36,6 +37,8 @@ function Home() {
 			</main>
 
 			<Footer/>
+
+			<ModalForm/>
 		</>
 	)
 }
