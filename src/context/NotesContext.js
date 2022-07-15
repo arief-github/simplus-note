@@ -15,6 +15,22 @@ const NotesContextProvider = ( props ) => {
 	const activeNotes = notes.filter((note) => note.archived === false);
 	const archiveNotes = notes.filter((note) => note.archived === true);
 
+	const addNote = (newTitle, newBodyText) => {
+		const date = new Date();
+
+		setNotes([
+			{
+				id: date.getTime(),
+				title: newTitle.trim(),
+				body: newBodyText.trim(),
+				createdAt: date.toJSON(),
+				archived: false,
+			},
+			...notes,
+		]);
+	}
+
+
 	const deleteNote = ( id ) => {
 		if (window.confirm('Delete Note ? ')) {
 			const deleteNotes = notes.filter((note) => note.id !== id);
@@ -37,7 +53,7 @@ const NotesContextProvider = ( props ) => {
 	}
 
 	return (
-		<NotesContext.Provider value={{ activeNotes, archiveNotes, deleteNote, moveNote }}> {props.children} </NotesContext.Provider>
+		<NotesContext.Provider value={{ activeNotes, archiveNotes, addNote, deleteNote, moveNote }}> {props.children} </NotesContext.Provider>
 	)
 };
 

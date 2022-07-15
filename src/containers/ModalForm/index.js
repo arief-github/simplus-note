@@ -63,9 +63,27 @@ function ModalForm() {
 			...form,
 			[currentElement]: {
 				...form[currentElement],
+			value: value.slice(0, form[currentElement].maxChar),
+			error: validateNoteInput(
+				currentElement,
+				value.slice(0, form[currentElement].maxChar)
+				)
 			}
 		})
 	};
+
+	const validateNoteInput = ( field, value ) => {
+		switch( field ) {
+			case 'title' : 
+				return titleValidation(value);
+			case 'bodyText' :
+				return bodyTextValidation(value);
+			default:
+				break;
+		}
+	}
+
+
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
