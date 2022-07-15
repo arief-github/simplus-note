@@ -1,0 +1,47 @@
+.form {
+	width: 100%;
+	border-bottom: 1px solid var(--line-color);
+}
+
+.inputGroup {
+	display: flex;
+	align-items: center;
+}
+
+.icon {
+	width: 24px;
+	height: 24px;
+}
+
+.textbox {
+	border: none;
+	width: 100%;
+	padding: 1em 1em;
+	font-size: 1rem;
+	font-weight: var(--fw-medium);
+	color: var(--text-primary-color);
+	background: none;
+	outline: none;
+}
+
+.textbox::placeholder {
+	color: var(--text-secondary-color);
+	opacity: 1;
+}
+
+@media only screen and (min-width: 768px) {
+	.form {
+		padding: 1.2em 0;
+		max-width: 400px;
+	}
+
+	.textbox {
+		margin-left: 1em;
+		border-left: 1px solid var(--line-color);
+	}
+
+	.textbox:focus {
+		outline: auto;
+		outline-width: 0.5px;
+	}
+}

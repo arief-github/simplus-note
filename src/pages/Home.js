@@ -4,6 +4,7 @@ import { NotesContext } from '../context/NotesContext';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import TabPanel from '../components/TabPanel';
+import SearchTab from '../components/SearchTab';
 
 import TabList from '../containers/TabList';
 import ModalForm from '../containers/ModalForm';
@@ -24,6 +25,7 @@ function Home() {
 			<main className={styles.main} >
 				<div className={styles.main__heading}>
 					<div className={styles.main__headingWrapper}>
+						<SearchTab/>
 						<TabList/>
 					</div>
 				</div>
