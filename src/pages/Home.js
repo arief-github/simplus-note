@@ -30,12 +30,26 @@ function Home() {
 					</div>
 				</div>
 
-				<section className={styles.main__notelist} id="daftar-catatan" aria-label="Daftar Catatan">
-					<div className={styles.main__notelistWrapper}>
-						<TabPanel panelId={`panel-aktif`} panelName={`active`} panelLabel={`tab-catatan-aktif`} notes={activeNotes} />
-						<TabPanel panelId={`panel-arsip`} panelName={`archive`} panelLabel={`tab-catatan-arsip`} notes={archiveNotes}/>
-					</div>
-				</section>
+				   <section
+			          className={styles.main__notelist}
+			          id="daftar-catatan"
+			          aria-label="Daftar Catatan"
+			        >
+			          <div className={styles.main__notelistWrapper}>
+			            <TabPanel
+			              panelId={`panel-aktif`}
+			              panelName={`active`}
+			              panelLabel={`tab-catatan-aktif`}
+			              notes={activeNotes}
+			            />
+			            <TabPanel
+			              panelId={`panel-arsip`}
+			              panelName={`archive`}
+			              panelLabel={`tab-catatan-arsip`}
+			              notes={archiveNotes}
+			            />
+			          </div>
+			        </section>
 			</main>
 
 			<Footer/>
