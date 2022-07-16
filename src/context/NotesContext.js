@@ -4,9 +4,11 @@ import { getInitialData } from '../data';
 
 export const NotesContext = createContext();
 export const MaxTitle = 30;
+const LocalStorageName = 'simplus-note-post-note';
 
 const initialState = () => {
-    return getInitialData();
+    const storage = localStorage.getItem(LocalStorageName);
+    return storage ? JSON.parse(storage) : getInitialData;
 };
 
 const NotesContextProvider = (props) => {
@@ -65,6 +67,11 @@ const NotesContextProvider = (props) => {
         });
         setNotes(filteredNotes);
     }
+    // connect to LocalStorage
+    useEffect(() => {
+        localStorage.setItem(LocalStorageName, JSON.stringify(notes));
+    }, [notes]);
+
 
     return (
         <NotesContext.Provider
