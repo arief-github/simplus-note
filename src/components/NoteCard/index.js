@@ -4,6 +4,9 @@ import { ClockIcon, TrashIcon } from '@heroicons/react/solid';
 import { NotesContext } from '../../context/NotesContext';
 import MarkText from '../MarkText';
 
+import { formattedDateAttributeTime } from '../../utils/formattedAttributeTime';
+import { showFormattedDate } from '../../utils/showFormattedDate';
+
 import styles from './index.module.css';
 
 function NoteCard({ note }) {
@@ -22,7 +25,10 @@ function NoteCard({ note }) {
 		        />
 			</h2>
 			<p className={styles.dateInfo}>
-				{note.createdAt}
+				<ClockIcon className={styles.iconTime} />
+				<time dateTime={formattedDateAttributeTime(note.createdAt)} >
+					{showFormattedDate(note.createdAt)}		
+				</time>
 			</p>
 			<hr className={styles.lineBreak} />
 			<p className={styles.bodyText}>
